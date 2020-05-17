@@ -6,8 +6,6 @@ import java.util.Objects;
 import org.jgrapht.alg.shortestpath.DijkstraShortestPath;
 import org.jgrapht.graph.WeightedMultigraph;
 
-import wooteco.subway.admin.dto.GraphResponse;
-import wooteco.subway.admin.dto.PathType;
 import wooteco.subway.admin.exception.IllegalStationNameException;
 import wooteco.subway.admin.exception.NotFoundLineException;
 import wooteco.subway.admin.exception.NotFoundPathException;
@@ -30,11 +28,13 @@ public class Graph {
         if (Objects.isNull(lines)) {
             throw new NotFoundLineException();
         }
-        WeightedMultigraph<Long, LineStationEdge> graph
-            = new WeightedMultigraph(LineStationEdge.class);
+        WeightedMultigraph<Long, LineStationEdge> graph = new WeightedMultigraph(
+            LineStationEdge.class);
+
         lines.stream()
             .flatMap(it -> it.getLineStationsId().stream())
             .forEach(graph::addVertex);
+
         lines.stream()
             .flatMap(it -> it.getStations().stream())
             .filter(it -> Objects.nonNull(it.getPreStationId()))

@@ -7,11 +7,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import wooteco.subway.admin.domain.Graph;
+import wooteco.subway.admin.domain.GraphResponse;
 import wooteco.subway.admin.domain.Line;
-import wooteco.subway.admin.dto.GraphResponse;
+import wooteco.subway.admin.domain.PathType;
 import wooteco.subway.admin.dto.PathRequest;
 import wooteco.subway.admin.dto.PathResponse;
-import wooteco.subway.admin.dto.PathType;
 import wooteco.subway.admin.dto.StationResponse;
 import wooteco.subway.admin.exception.NotFoundStationException;
 

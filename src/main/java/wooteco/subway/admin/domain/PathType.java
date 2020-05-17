@@ -1,9 +1,8 @@
-package wooteco.subway.admin.dto;
+package wooteco.subway.admin.domain;
 
 import java.util.Objects;
 import java.util.function.Function;
 
-import wooteco.subway.admin.domain.LineStation;
 import wooteco.subway.admin.exception.IllegalTypeNameException;
 
 public enum PathType {
